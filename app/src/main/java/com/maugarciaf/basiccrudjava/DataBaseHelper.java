@@ -33,7 +33,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    // Insertar datos
+    // Insert data
     public long insertData(String name, String surname, String email) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -46,14 +46,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return insert;
     }
 
-    //Leer data
+    //Read data
     public Cursor getAlldata(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("Select *from " + TABLE_NAME,null);
         return res;
     }
 
-    // Actualizar data
+    // Update data
     public boolean updateData(String id, String name, String surname, String email) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
